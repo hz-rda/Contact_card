@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(bg.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card{
+    height: 80vh;
+    width: 25vw;
+    backdrop-filter: blur(15px);
+    border: 0.4vw solid rgba(255, 255, 255, 0.295);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 15px 15px 35px 5px rgba(0, 0, 0, 0.596),
+                inset -15px -15px 50px 0px rgba(255, 255, 255, 0.384);
+    animation: transfer 5s ease-in-out alternate infinite;
+}
+
+#card::before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: -700%;
+    z-index: 0;
+    width: 1000%;
+    height: 20%;
+    transform-origin: center;
+    transform: rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0.226);
+    animation: lite 20s linear infinite;
+}
+
+@keyframes lite{
+
+    0%{
+        transform: translate(0%) rotate(-45deg);
+    }
+    90%{
+        transform: translate(0%) rotate(-45deg);
+    }
+    100%{
+        transform: translate(100%) rotate(-45deg);
+    }
+}
+
+@keyframes transfer{
+
+    from{
+        transform: translateY(2%);
+    }
+    to{
+        transform: translateY(-2%);
+    }
+
+}
+
+#pfp{
+    position: absolute;
+    width: 10vw;
+    border-radius: 50%;
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1vw solid rgba(255, 255, 255, 0.301);
+    overflow: hidden;
+    top: 8%;
+    transition: all 0.5s ease;
+    transform-origin: center;
+}
+
+#pfp:hover{
+    transform: scale(1.14) rotate(-8deg);
+}
+
+#pfp img{
+    width: 150%;
+}
+
+p{
+    width: 70%;
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+#info{
+    display: flex;
+    height: 40%;
+    position: absolute;
+    top: 35%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+#contact{
+    position: absolute;
+    display: flex;
+    top: 75%;
+    width: 55%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+svg{
+    width: 2.2vw;
+    padding: 0.5vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.377);
+    border-radius: 50%;
+    box-sizing: content-box;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.144);
+    align-items: center;
+    justify-content: space-evenly;
+    fill: white;
+    transition: all 0.3s ease;
+}
+
+svg:hover{
+    background: linear-gradient(45deg,
+    rgba(255, 0, 234, 0.699),
+    rgba(0, 110, 255, 0.76)
+    );
+    transform: translateY(-1vw);
+}
+
+h1{
+    font-size: 2.5vw;
+}
+
+button{
+    border: 0.2vw solid rgba(255, 255, 255, 0.37);
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 1.3vw;
+    top: 90%;
+    background: linear-gradient(45deg,
+    rgba(255, 0, 234, 0.699),
+    rgba(0, 110, 255, 0.76)
+    );
+    box-sizing: content-box;
+    padding: 0.5vw;
+    border-radius: 100px;
+    transition: all 0.5s ease;
+}
+
+button:hover{
+    letter-spacing: 4px;
+}
+
+@media (max-width: 900px) {
+    #card{
+    height: 70vh;
+    width: 30vw;
+}
+
+}
+
+@media (max-width: 720px) {
+    #card{
+    height: 55vh;
+    width: 35vw;
+}
+h1{
+    font-size: 3vw;
+}
+p{
+    font-size: 1.5vw;
+}
+
+}
+
+@media (max-width: 600px) {
+    #card{
+    height: 55vh;
+    width: 40vw;
+}
+}
+
+@media (max-width: 530px) {
+    #card{
+    height: 70vh;
+    width: 50vw;
+}
+
+#pfp{
+    width: 20vw;
+    height: 20vw;
+    border: 2.5vw solid rgba(255, 255, 255, 0.301);
+}
+
+p{
+    width: 70%;
+    font-size: 2.5vw;
+}
+
+svg{
+    width: 3.5vw;
+    padding: 1vw;
+}
+
+h1{
+    font-size: 5vw;
+}
+
+button{
+    font-size: 2.5vw;
+    padding: 1vw;
+}
+
+button:hover{
+    letter-spacing: 3px;
+}
+}
+
+@media (max-width: 350px) {
+    #card{
+    height: 58vh;
+    width: 75vw;
+}
+
+#pfp{
+    width: 25vw;
+    height: 25vw;
+}
+
+p{
+    font-size: 3.5vw;
+}
+
+svg{
+    width: 4.5vw;
+    padding: 2vw;
+
+}
+
+h1{
+    font-size: 7vw;
+}
+
+button{
+    font-size: 3.5vw;
+    padding: 2vw;
+
+}
+
+}
+
